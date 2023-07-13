@@ -7,6 +7,4 @@ services:
     - BACK_URL=http://localhost:8081/backapp
   backapp:
     build: ./backapp/
-    ports:
-      - "9000:8081"
     
