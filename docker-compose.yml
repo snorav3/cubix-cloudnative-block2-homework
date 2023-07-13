@@ -1,10 +1,8 @@
 services:
-  frontapp:
-    build: ./frontapp/
+  apps:
+    build: .
     ports:
       - "8080:8080"
     environment:
     - BACK_URL=http://localhost:8081/backapp
-  backapp:
-    build: ./backapp/
     
