@@ -6,7 +6,7 @@ ENV CUBIX_HOMEWORK="S. Nori" APP_DEFAULT_MESSAGE=
 
 WORKDIR /apps
 
-COPY frontapp/.mvn/ frontapp/.mvn
+COPY frontapp/.mvn/ frontapp/.mvn/
 COPY frontapp/mvnw frontapp/pom.xml ./frontapp/
 COPY backapp/.mvn/ backapp/.mvn
 COPY backapp/mvnw backapp/pom.xml ./backapp/
