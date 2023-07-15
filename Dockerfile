@@ -6,16 +6,15 @@ ENV CUBIX_HOMEWORK="S. Nori" APP_DEFAULT_MESSAGE=
 
 WORKDIR /apps
 
-COPY .mvn/ frontapp/.mvn
-COPY mvnw pom.xml frontapp
-COPY backapp/.mvn/ backapp/.mvn
-COPY backapp/mvnw backapp/pom.xml ./backapp/
-
+COPY frontapp/.mvn/ frontapp/.mvn
+COPY frontapp/mvnw frontapp/pom.xml frontapp/
 RUN ./frontapp/mvnw dependency:resolve
-RUN ./backapp/mvnw dependency:resolve
+COPY frontapp/src/ frontapp/src
 
-COPY frontapp/src ./frontapp/src
-COPY backapp/src ./backapp/src
+COPY backapp/.mvn/ backapp/.mvn
+COPY backapp/mvnw backapp/pom.xml backapp/
+RUN ./backapp/mvnw dependency:resolve
+COPY backapp/src/ backapp/src
 
 #CMD ["./mvnw", "spring-boot:run"]
 
