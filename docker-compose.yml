@@ -9,4 +9,6 @@ services:
   
   backapp:
     build: ./backapp/
+    ports:
+      - "8081:8081"
     
