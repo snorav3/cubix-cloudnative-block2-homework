@@ -3,6 +3,7 @@ services:
   frontapp:
     image: frontapp
     build: ./frontapp/
+      context: frontapp
       dockerfile: ./Dockerfile
     ports:
     - 8080:8080
@@ -12,6 +13,7 @@ services:
   backapp:
     image: backapp
     build: ./backapp/
+      context: backapp
       dockerfile: ./Dockerfile
     ports:
     - 8081:8080
