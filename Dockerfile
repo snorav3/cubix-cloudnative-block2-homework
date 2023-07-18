@@ -4,4 +4,7 @@ LABEL cubix.homework.owner="Sterbinszky Nora"
 
 ENV CUBIX_HOMEWORK="S. Nori" APP_DEFAULT_MESSAGE=
 
-COPY target/ target
+#COPY target/ target
+COPY target/*.jar app.jar
+
+CMD [ "java", "-jar", "app.jar" ]
